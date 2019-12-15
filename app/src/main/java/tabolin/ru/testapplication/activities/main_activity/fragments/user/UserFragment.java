@@ -75,6 +75,7 @@ public class UserFragment extends Fragment implements UserViewModel.Listener {
             user.getFollowers() != null
                 ? user.getFollowers()
                 : getResources().getString(R.string.havent)));
+    binding.progressLayout.getRoot().setVisibility(View.GONE);
   }
 
   @Override

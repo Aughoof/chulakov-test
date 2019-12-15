@@ -70,6 +70,7 @@ public class UsersListFragment extends Fragment
       usersEnded = true;
       return;
     }
+    binding.progressLayout.getRoot().setVisibility(View.GONE);
     offset = users.get(users.size() - 1).getId();
     usersAdapter.addUsers(users);
     usersAdapter.notifyDataSetChanged();
@@ -100,6 +101,7 @@ public class UsersListFragment extends Fragment
   public void listScrolledToEnd() {
     if (!usersEnded) {
       viewModel.getUsers(offset);
+      binding.progressLayout.getRoot().setVisibility(View.VISIBLE);
     }
   }
 }
