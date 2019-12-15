@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+    <string name="action_settings">Settings</string>
+    <string name="user">Пользователь</string>
+    <string name="biography">Биография пользователя</string>
+    <string name="users_title">Пользователи Github</string>
+    <string name="users_not_found">Пользователи не найдены</string>
+    <string name="user_not_found">Пользователь не найдены</string>
+    <string name="position_id">ID пользователя:</string>
+    <string name="user_biography">Биография:</string>
+    <string name="repos">Репозитории:</string>
+    <string name="followers">Подписчики:</string>
+    <string name="havent">отсутствует</string>
+</resources>
