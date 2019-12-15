@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/users_fragment"
-        android:name="tabolin.ru.testapplication.activities.main_activity.fragments.users_list.UsersListFragment"
+        android:name="tabolin.ru.chulakovtest.activities.main_activity.fragments.users_list.UsersListFragment"
         android:label="users_fragment"
         tools:layout="@layout/users_list_fragment" />
 
     <fragment
         android:id="@+id/user_fragment"
-        android:name="tabolin.ru.testapplication.activities.main_activity.fragments.user.UserFragment"
+        android:name="tabolin.ru.chulakovtest.activities.main_activity.fragments.user.UserFragment"
         android:label="user_fragment"
         tools:layout="@layout/user_fragment" />
 
