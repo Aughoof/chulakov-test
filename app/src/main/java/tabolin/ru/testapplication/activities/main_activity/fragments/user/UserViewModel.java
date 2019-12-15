@@ -17,14 +17,29 @@ public class UserViewModel extends ViewModel {
   CompositeDisposable disposable = new CompositeDisposable();
   private Listener listener;
 
+  /**
+   * Inject UserFragment dependency.
+   *
+   * @param context
+   */
   public void inject(Context context) {
     MainApplication.getApplication(context).getComponentsHolder().getUserComponent().inject(this);
   }
 
+  /**
+   * Clearing dependency injection.
+   *
+   * @param context
+   */
   public void release(Context context) {
     MainApplication.getApplication(context).getComponentsHolder().releaseUserComponent();
   }
 
+  /**
+   * Getting model User from Github.
+   *
+   * @param login - login of current user.
+   */
   public void getUser(String login) {
     disposable.add(
         usersService
@@ -40,22 +55,39 @@ public class UserViewModel extends ViewModel {
                     listener.userNotFound();
                   }
                 },
-                    throwable -> listener.error(throwable)));
+                throwable -> listener.error(throwable)));
   }
 
+  /** Listener getter. */
   public Listener getListener() {
     return listener;
   }
 
+  /**
+   * Listener setter.
+   *
+   * @param listener
+   */
   public void setListener(Listener listener) {
     this.listener = listener;
   }
 
   public interface Listener {
+    /**
+     * Function showing data from model User
+     * @param user - model User.
+     */
     void userFound(User user);
 
+    /**
+     * Function showing message if model User is null.
+     */
     void userNotFound();
 
+    /**
+     * Function showing an error message.
+     * @param throwable
+     */
     void error(Throwable throwable);
   }
 }

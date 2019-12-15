@@ -21,6 +21,11 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersHolder>
   List<User> users;
   Listener listener;
 
+  /**
+   * Class constructor.
+   * @param users - an array of models User.
+   * @param listener - interface Listener.
+   */
   public UsersAdapter(List<User> users, Listener listener) {
     this.listener = listener;
     this.users = users;
@@ -52,6 +57,10 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersHolder>
     }
   }
 
+  /**
+   * Add a new array of models User to the old one.
+   * @param users - an array of models Users.
+   */
   public void addUsers(List<User> users) {
     this.users.addAll(users);
   }
@@ -61,10 +70,17 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersHolder>
     return users.size();
   }
 
+  /**
+   * Custom ViewHolder
+   */
   public class UsersHolder extends RecyclerView.ViewHolder {
 
     public UserItemBinding binding;
 
+    /**
+     * Class constructor.
+     * @param binding - data binding.
+     */
     public UsersHolder(UserItemBinding binding) {
       super(binding.getRoot());
       this.binding = binding;
@@ -72,8 +88,16 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersHolder>
   }
 
   public interface Listener {
+    /**
+     * Adding on click action.
+     * @param user - model User.
+     * @param position - index of view.
+     */
     void onClick(User user, int position);
 
+    /**
+     * Function getting a new array of models User
+     */
     void listScrolledToEnd();
   }
 }
